@@ -15,8 +15,11 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
+app.use(body_parser.json());
 
-//app.use(body_parser.json);
+app.use(passport.initialize());
+app.use(passport.session());
+require("./config//passport")(passport);
 
 mongoose.connect(config.db);
 mongoose.connection.on('connected', () => {
