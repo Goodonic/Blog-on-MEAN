@@ -27,7 +27,6 @@ router.post('/reg',
     });
 
 router.post('/auth',  (req, res) => {
-    res.send("Auth page");
     const login = req.body.login;
     const password = req.body.password;
 

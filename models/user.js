@@ -1,7 +1,6 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const config = require("../config/db");
-const {query} = require("express");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const config = require('../config/db');
 
 const UserSchema = mongoose.Schema({
     email: {
