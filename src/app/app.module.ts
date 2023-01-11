@@ -10,7 +10,9 @@ import { RegComponent } from './reg/reg.component';
 import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {FormsModule} from "@angular/forms";
-
+import {RegService} from "./reg.service";
+import {HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./auth.service";
 
 
 @NgModule({
@@ -20,15 +22,17 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     RegComponent,
     AuthComponent,
-    DashboardComponent
+    DashboardComponent,
+
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         FlashMessagesModule.forRoot(),
+        HttpClientModule,
     ],
-  providers: [],
+  providers: [RegService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
