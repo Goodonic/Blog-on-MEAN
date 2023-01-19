@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ export class AuthService {
 
   token: any
   user: any
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private jwtHelper: JwtHelperService
+              ) { }
 
   authUser( user: any) {
     let headers = new HttpHeaders();
@@ -28,4 +31,11 @@ export class AuthService {
     this.user = null;
     localStorage.clear()
   }
+
+  isAuthenticated(){
+      console.log(this.token)
+      console.log(this.jwtHelper.isTokenExpired(this.token))
+      return !this.jwtHelper.isTokenExpired(this.token)}
+
+
 }

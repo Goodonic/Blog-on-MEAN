@@ -4,10 +4,10 @@
   </a>
 
   <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-    <a class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
-    <a class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/dashboard']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dashboard</font></font></a>
+    <a *ngIf="authService.isAuthenticated()" class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
+    <a *ngIf="authService.isAuthenticated()" class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/dashboard']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dashboard</font></font></a>
   </nav>
-  <a class="me-3 btn btn-outline-primary" [routerLink]="['/auth']">Sign in</a>
-  <a class="me-3 btn btn-outline-primary" [routerLink]="['/reg']">Sign up</a>
-  <a class="me-3 btn btn-outline-warning" (click)="logoutUser()">Logout</a>
+  <a *ngIf="!authService.isAuthenticated()" class="me-3 btn btn-outline-primary" [routerLink]="['/auth']">Sign in</a>
+  <a *ngIf="!authService.isAuthenticated()" class="me-3 btn btn-outline-primary" [routerLink]="['/reg']">Sign up</a>
+  <a *ngIf="authService.isAuthenticated()" class="me-3 btn btn-outline-warning" (click)="logoutUser()">Logout</a>
 </div>

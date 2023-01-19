@@ -13,6 +13,8 @@ import {FormsModule} from "@angular/forms";
 import {RegService} from "./reg.service";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./auth.service";
+import {JwtHelperService, JWT_OPTIONS} from "@auth0/angular-jwt";
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {AuthService} from "./auth.service";
         FlashMessagesModule.forRoot(),
         HttpClientModule,
     ],
-  providers: [RegService, AuthService],
+  providers: [RegService, AuthService,  { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

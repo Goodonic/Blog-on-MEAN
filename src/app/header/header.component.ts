@@ -11,7 +11,7 @@ import {AuthService} from "../auth.service";
 export class HeaderComponent implements OnInit{
 
   constructor(private _flashMessagesService: FlashMessagesService,
-              private authService: AuthService,
+              public authService: AuthService,
               private router: Router) {}
   ngOnInit(): void {
   }
