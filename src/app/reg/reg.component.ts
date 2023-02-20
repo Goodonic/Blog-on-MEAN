@@ -17,7 +17,7 @@ export class RegComponent implements OnInit {
 
   constructor(private _flashMessagesService: FlashMessagesService,
               private regService: RegService,
-               private router: Router){ }
+              private router: Router){ }
   ngOnInit(): void  {
   }
   signUp() {
@@ -34,13 +34,13 @@ export class RegComponent implements OnInit {
     }
 
     this.regService.registerUser(user).subscribe(data=>{
-    // @ts-ignore
-      if(!data.success){
       // @ts-ignore
-      this._flashMessagesService.show(data.msg,
-        { cssClass: 'alert-danger', timeout: 2000 });
-      this.router.navigate(['/reg'])
-    }
+      if(!data.success){
+        // @ts-ignore
+        this._flashMessagesService.show(data.msg,
+          { cssClass: 'alert-danger', timeout: 2000 });
+        this.router.navigate(['/reg'])
+      }
       else {
         // @ts-ignore
         this._flashMessagesService.show(data.msg,
