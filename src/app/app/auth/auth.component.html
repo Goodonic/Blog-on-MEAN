@@ -1,0 +1,10 @@
+<body class="text-center container">
+<form (submit)="signIn()" class="form-sign up">
+  <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <input [(ngModel)]="login" type="login" name="login" id="inputLogin" class="form-control" placeholder="Login">
+  <input [(ngModel)]="password" type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+  <button class="btn mt-3 btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  <p class="mt-5 mb-3 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">©2023</font></font></p>
+</form>
+</body>

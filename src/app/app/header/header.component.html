@@ -1,0 +1,13 @@
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+  <a href="/" class="d-flex align-items-center text-dark text-decoration-none ">
+    <h5 class="my-0 mx-2 mt-2 mr-md-auto font-weight-normal">Blog</h5>
+  </a>
+
+  <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <a *ngIf="authService.isAuthenticated()" class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
+    <a *ngIf="authService.isAuthenticated()" class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/dashboard']"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dashboard</font></font></a>
+  </nav>
+  <a *ngIf="!authService.isAuthenticated()" class="me-3 btn btn-outline-primary" [routerLink]="['/auth']">Sign in</a>
+  <a *ngIf="!authService.isAuthenticated()" class="me-3 btn btn-outline-primary" [routerLink]="['/reg']">Sign up</a>
+  <a *ngIf="authService.isAuthenticated()" class="me-3 btn btn-outline-warning" (click)="logoutUser()">Logout</a>
+</div>
