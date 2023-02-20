@@ -11,7 +11,7 @@ export class AuthService {
   user: any
   constructor(private http: HttpClient,
               private jwtHelper: JwtHelperService
-              ) { }
+  ) { }
 
   authUser( user: any) {
     let headers = new HttpHeaders();
@@ -33,9 +33,9 @@ export class AuthService {
   }
 
   isAuthenticated(){
-      console.log(this.token)
-      console.log(this.jwtHelper.isTokenExpired(this.token))
-      return !this.jwtHelper.isTokenExpired(this.token)}
+    //console.log(this.token)
+    // console.log(this.jwtHelper.isTokenExpired(this.token))
+    return !this.jwtHelper.isTokenExpired(this.token)}
 
 
 }

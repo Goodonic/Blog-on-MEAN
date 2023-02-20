@@ -27,13 +27,13 @@ import {JwtHelperService, JWT_OPTIONS} from "@auth0/angular-jwt";
     DashboardComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        FlashMessagesModule.forRoot(),
-        HttpClientModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    FlashMessagesModule.forRoot(),
+    HttpClientModule,
+  ],
   providers: [RegService, AuthService,  { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService ],
   bootstrap: [AppComponent]
